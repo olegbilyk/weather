@@ -21394,7 +21394,7 @@ function verifySubselectors(mapStateToProps, mapDispatchToProps, mergeProps, dis
 function loadCityNow(city) {
   return {
     type: __WEBPACK_IMPORTED_MODULE_0__constants__["b" /* LOAD_CITY_NOW */],
-    callAPI: `http://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=20&units=metric&APPID=db6b06579dad6bdce918071f61275e19`
+    callAPI: `https://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=20&units=metric&APPID=db6b06579dad6bdce918071f61275e19`
   };
 }
 
