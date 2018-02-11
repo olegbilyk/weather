@@ -1,7 +1,7 @@
 # Weather React
 
 ## Demo
-[Demo](https://olegbilyk.github.io/weather)
+[Demo](https://olegbilyk.github.io/weather/)
 
 #### Installation
 
