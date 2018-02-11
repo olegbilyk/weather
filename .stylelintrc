@@ -1,0 +1,25 @@
+{
+  "processors": [
+    "stylelint-processor-styled-components"
+  ],
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-styled-components"
+  ],
+  "rules": {
+    "unit-whitelist": [
+      "px",
+      "em",
+      "rem",
+      "%",
+      "vh",
+      "vw",
+      "vmin",
+      "vmax",
+      "fr",
+      "s",
+      "deg"
+    ]
+  },
+  "syntax": "scss"
+}
