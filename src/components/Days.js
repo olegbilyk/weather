@@ -3,41 +3,54 @@ import PropTypes from 'prop-types'
 import styled from 'react-emotion'
 import moment from 'moment'
 
-const Ul = styled('ul')`
-  display: grid;
-  grid-gap: 20px 30px;
-  margin-top: 0;
-  padding-left: 0;
-  grid-template-columns: repeat(auto-fill, 240px);
-  list-style: none;
+const Div = styled('div')`
+  h4 {
+    margin: 0 0 5px;
+    font-size: 24px;
+    font-weight: 400;
 
-  li {
-    time {
-      display: inline-block;
-      margin-right: 15px;
-      font-size: 20px;
-      font-weight: 400;
+    small {
+      font-size: 0.6em;
+      color: var(--color-primary);
+    }
+  }
 
-      small {
-        font-size: 0.6em;
-        color: var(--color-primary);
+  ul {
+    display: grid;
+    grid-gap: 20px 30px;
+    margin-top: 0;
+    padding-left: 0;
+    grid-template-columns: repeat(auto-fill, 240px);
+    list-style: none;
+
+    li {
+      time {
+        display: inline-block;
+        margin-right: 15px;
+        font-size: 20px;
+        font-weight: 400;
+
+        small {
+          font-size: 0.6em;
+          color: var(--color-primary);
+        }
       }
-    }
 
-    i {
-      display: inline-block;
-      margin-right: 15px;
-      font-size: 34px;
-      color: var(--color-primary-3);
-    }
+      i {
+        display: inline-block;
+        margin-right: 15px;
+        font-size: 34px;
+        color: var(--color-primary-3);
+      }
 
-    p {
-      display: inline-block;
-      margin: 0;
-      color: var(--color-primary-2);
+      p {
+        display: inline-block;
+        margin: 0;
+        color: var(--color-primary-2);
 
-      span {
-        font-size: 1.2em;
+        span {
+          font-size: 1.2em;
+        }
       }
     }
   }
@@ -63,7 +76,9 @@ class Day extends Component {
   }
 
   render () {
-    const elements = this.props.data.weatherList.map(item => {
+    const {city, country, weatherList} = this.props.data
+
+    const elements = weatherList.map(item => {
       return (
         <li key={item.id}>
           <time dateTime={item.time}>{moment(item.time).format('HH:mm')}<small> / {moment(item.time).format('D MMM')}</small></time>
@@ -74,9 +89,12 @@ class Day extends Component {
     })
 
     return (
-      <Ul>
-        {elements}
-      </Ul>
+      <Div>
+        <h4>{city}<small> / {country}</small></h4>
+        <ul>
+          {elements}
+        </ul>
+      </Div>
     )
   }
 }
