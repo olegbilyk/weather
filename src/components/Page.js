@@ -39,7 +39,6 @@ const fadeBoth = keyframes`
 `
 
 const Content = styled('div')`
-  display: grid;
   padding-bottom: 50px;
   font-size: 16px;
   line-height: 1.6;
